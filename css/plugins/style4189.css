@@ -1,0 +1,677 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900&amp;subset=latin,latin-ext);
+
+/**********************************************************/
+/***************************RESET**************************/
+/**********************************************************/
+
+
+/* HTML5 display-role reset for older browsers */
+
+
+
+ol, ul {
+    list-style: none;
+}
+
+
+
+/**********************************************************/
+/***************************GLOBAL*************************/
+/**********************************************************/
+
+
+
+body {
+    font-family: Lato, Tahoma;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px;
+    height: 100%;
+}
+
+
+
+a, a:hover,
+input, input:hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease; /* Mozilla fix */
+}
+
+
+
+.box-container {
+    margin: 0 auto;
+    width: 940px;
+    padding: 0 10px;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+/**********************************************************/
+/***************************MAP****************************/
+/**********************************************************/
+
+div#map-wrapper {
+    position: relative;
+    min-width: 960px;
+}
+
+body.fixed-map-left div#map-wrapper,
+body.fixed-map-right div#map-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+body.fixed-map-left div#map-wrapper {
+    left: 61px;
+}
+
+body.fixed-map-right div#map-wrapper {
+    right: 61px;
+}
+
+body.admin-bar.fixed-map-left div#map-wrapper,
+body.admin-bar.fixed-map-right div#map-wrapper {
+    top: 32px;
+}
+
+div#map-wrapper div#map {
+    height: 485px;
+}
+
+div#street-view {
+    min-width: 960px;
+    height: 487px;
+}
+
+div#street-view iframe {
+    display: block;
+    height: 485px;
+}
+
+div#map-wrapper div.map-control.show {
+    display: none;
+}
+
+div#map-wrapper div.map-control {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease; /* Mozilla fix */
+}
+
+body.fixed-map-left div#map-control,
+body.fixed-map-right div#map-control {
+    display: none;
+}
+
+div#map-wrapper div.map-control a {
+    display: block;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+div#map-wrapper div.map-control:hover {
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease; /* Mozilla fix */
+}
+
+div#map-wrapper div.map-control a i {
+    margin-right: 10px;
+}
+
+div#map-trobber {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+div#map-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+div#map-error span {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    margin: -25px 0 0 -100px;
+}
+
+div.disable-map-control {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease; /* Mozilla fix */
+}
+
+div.disable-map-control:hover {
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease; /* Mozilla fix */
+}
+
+div.disable-map-control a {
+    display: block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+/**************************MARKERS*************************/
+
+div.marker-container.map-no-over {
+    position: relative;
+    z-index: 500;
+}
+
+div.marker-container.map-over {
+    position: relative;
+    z-index: 550;
+}
+
+div.marker-container > div.map-triangle.map-click,
+div.marker-container > div.map-triangle.map-no-click {
+    position: absolute;
+    left: -1px;
+    bottom: 0;
+    border-bottom: 20px solid transparent;
+    -webkit-transition: border-left-color 0.5s ease;
+    -moz-transition: border-left-color 0.5s ease; /* Mozilla fix */
+    cursor: pointer;
+}
+
+div.marker-container.map-no-over:hover > div.map-triangle.map-click {
+    border-left: 16px solid #40555c !important;
+}
+
+div.marker-on-map {
+    position: absolute;
+    left: -1px;
+    bottom: 20px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease; /* Mozilla fix */
+}
+
+div.marker-container.map-no-over:hover div.marker-on-map {
+    background: #40555c !important;
+}
+
+div.marker-on-map i.marker-icon {
+    display: block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.3333em;
+    -webkit-transition: font-size 0.3s ease;
+    -moz-transition: font-size 0.3s ease; /* Mozilla fix */
+}
+
+div.marker-on-map i.marker-icon > i {
+    display: block;
+    height: 18px;
+    width: 18px;
+    margin: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease; /* Mozilla fix */
+}
+
+div.marker-container.map-no-over:hover div.marker-on-map i.marker-icon {
+    font-size: 1.6666em;
+    -webkit-transition: font-size 0.25s ease;
+    -moz-transition: font-size 0.25s ease;
+}
+
+div.marker-container.map-no-over:hover div.marker-on-map i.marker-icon > i {
+    height: 22px;
+    width: 22px;
+    margin: 9px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+}
+
+div.marker-content {
+    display: none;
+    width: 400px;
+    height: 150px;
+}
+
+div.marker-content.image-marker {
+    display: block;
+    overflow: hidden;
+}
+
+div.marker-content div.marker-image {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+div.marker-content div.marker-image a {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+div.marker-content div.marker-image a img {
+    width: 150px !important;
+    height: 150px !important;
+}
+
+div.marker-content div.marker-description {
+    width: 210px;
+    height: 110px;
+    padding: 20px;
+    float: left;
+}
+
+div.marker-content div.marker-description div,
+div.marker-content div.marker-description a {
+    font-family: Lato;
+    line-height: 20px;
+}
+
+div.marker-content div.marker-description div.marker-name {
+    height: 20px;
+    overflow: hidden;
+}
+
+div.marker-content div.marker-description div.marker-name a {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+}
+
+div.marker-content div.marker-description div.marker-rating {
+    height: 24px;
+    line-height: 24px;
+}
+
+div.marker-content div.marker-description div.marker-address {
+    font-size: 14px;
+    font-weight: normal;
+    height: 40px;
+    margin: 0 0 5px 0;
+    overflow: hidden;
+}
+
+div.marker-content div.marker-description div.marker-link a {
+    font-size: 14px;
+    font-weight: bold;
+    height: 20px;
+    display: block;
+}
+
+div.marker-content div.marker-description div.marker-link a i {
+    padding-right: 6px;
+}
+
+div.marker-on-map div.marker-close,
+div.marker-on-map div.marker-close i {
+    display: none;
+}
+
+div.marker-on-map:hover div.marker-close i {
+    display: block;
+}
+
+div.marker-on-map div.marker-close {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+}
+
+section.no-rtl div.marker-on-map div.marker-close {
+    right: 0;
+}
+
+div.marker-on-map div.marker-close i {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+
+/**********************************************************/
+/*********************INDUSTRIES*TABS**********************/
+/**********************************************************/
+
+div#industries-tabs {
+    clear: both;
+    min-width: 960px;
+}
+
+body.fixed-map-left div#industries-tabs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 60px;
+    width: 60px;
+    border-bottom: none;
+}
+
+body.fixed-map-right div#industries-tabs {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 60px;
+    width: 60px;
+    border-bottom: none;
+}
+
+body.admin-bar.fixed-map-left div#industries-tabs,
+body.admin-bar.fixed-map-right div#industries-tabs {
+    margin: 32px 0 0 0;
+}
+
+ul.industries-tabs {
+    overflow: hidden;
+    clear: both;
+    max-width: 950px;
+    padding: 0 10px 10px 0;
+}
+
+body.fixed-map-left ul.industries-tabs,
+body.fixed-map-right ul.industries-tabs {
+    max-width: 40px;
+    padding: 0;
+}
+
+ul.industries-tabs li {
+    float: left;
+    margin: 0px 0 5px 5px;
+}
+
+body.fixed-map-left ul.industries-tabs li,
+body.fixed-map-right ul.industries-tabs li {
+    margin: 0 0 10px 0;
+}
+
+ul.industries-tabs li.first {
+    margin-left: 0;
+}
+
+body.fixed-map-left ul.industries-tabs li.first,
+body.fixed-map-right ul.industries-tabs li.first {
+    margin: 10px 0;
+}
+
+#industries-tabs .ttd_label {
+    line-height: 55px;
+    font-weight: 300;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+body.fixed-map-left div#industries-tabs .ttd_label,
+body.fixed-map-right div#industries-tabs .ttd_label {
+    display: none;
+}
+
+ul.industries-tabs li a {
+    display: block;
+    height: 38px;
+    width: 38px;
+    margin: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    line-height: 38px;
+    text-align: center;
+}
+
+ul.industries-tabs li a i {
+    display: block;
+    height: 38px;
+    width: 38px;
+    line-height: 38px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease; /* Mozilla fix */
+}
+
+ul.industries-tabs li a i.custom-icon {
+    width: 16px;
+    height: 16px;
+    margin: 11px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul.industries-tabs li a:hover i {
+    font-size: 1.333333em;
+    -webkit-transition: font-size 0.25s ease;
+    -moz-transition: font-size 0.25s ease; /* Mozilla fix */
+}
+
+ul.industries-tabs li a:hover i.custom-icon {
+    width: 22px;
+    height: 22px;
+    margin: 8px;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease; /* Mozilla fix */
+}
+
+
+
+/**********************************************************/
+/***************************RATING*************************/
+/**********************************************************/
+
+div.rating-stars-box i {
+    display: block;
+    width: 59px;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;
+    float: left;
+    margin-right: -1px;
+}
+
+div.rating-send {
+    padding: 40px;
+}
+
+div.rating-details {
+    float: left;
+}
+
+div.rating-details input,
+div.rating-details textarea {
+    margin-bottom: 20px;
+    width: 230px;
+}
+
+div.rating-details button {
+    height: 38px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 15px;
+    margin: 0;
+}
+
+div.rating-details button:hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+}
+
+div.rating-details textarea {
+    min-height: 138px;
+}
+
+div.ratings {
+    float: right;
+}
+
+div.rating > div {
+    float: left;
+}
+
+div.rating {
+    height: 38px;
+    line-height: 38px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease; /* Mozilla fix */
+}
+
+div.rating:hover {
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease; /* Mozilla fix */
+}
+
+div.rating div.rating-title {
+    width: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease; /* Mozilla fix */
+}
+
+
+div.rating:hover div.rating-title {
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease; /* Mozilla fix */
+}
+
+div.rating i {
+    height: 30px;
+    width: 25px;
+    text-align: center;
+    line-height: 30px;
+    margin: 4px 0;
+    cursor: pointer;
+    display: block;
+    float: left;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease; /* Mozilla fix */
+}
+
+div.rating:hover i {
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease; /* Mozilla fix */
+}
+
+div.user-rating {
+    padding-bottom: 20px;
+}
+
+div.user-rating div.value {
+    position: relative;
+    width: 108px;
+    height: 38px;
+    text-align: center;
+    line-height: 19px;
+    padding: 20px;
+    float: left;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease; /* Mozilla fix */
+}
+
+div.user-rating div.value:hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease; /* Mozilla fix */
+}
+
+div.user-rating div.value div.showall {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div.user-rating div.value div.user-values {
+    position: absolute;
+    display: none;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); /* IE 5.5+*/
+    -moz-opacity: 0; /* Mozilla 1.6 */
+    -khtml-opacity: 0; /* Konqueror 3.1, Safari 1.1 */
+    opacity: 0; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9 */
+    width: 488px;
+    height: 38px;
+    line-height: 19px;
+    padding: 20px;
+    top: -1px;
+}
+
+section.no-rtl div.user-rating div.value div.user-values {
+    left: 170px;
+}
+
+div.user-rating div.value div.user-values div.user-rating-send {
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+div.user-rating div.value:hover div.user-values {
+    display: block;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100); /* IE 5.5+*/
+    -moz-opacity: 1; /* Mozilla 1.6 */
+    -khtml-opacity: 1; /* Konqueror 3.1, Safari 1.1 */
+    opacity: 1; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9 */
+}
+
+div.user-rating div.stars-description {
+    padding-left: 170px;
+}
+
+div.user-rating div.stars-description div.stars-name {
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+

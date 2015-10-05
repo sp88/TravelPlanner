@@ -1,0 +1,126 @@
+
+/*
+Image and Information styles
+*/
+.container-fluid{max-width:1200px;}
+
+.package-box{
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.package-box-img img {
+    width: 100%;
+    height: 100%;
+}
+.package-box-info {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 3px 7px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+                 
+.package-box-details {
+    margin-left: 1px;
+}
+.package-box-name {
+    color: #fff;
+    font-size: 17px;
+    padding-top: 1px;
+}
+.package-box-type {
+    font-size: 12px;
+    color: #f7ab01;
+    /*text-transform: uppercase;*/
+    padding-bottom: 1px;
+}
+.package-box-price {
+    float: right;
+    text-align: center;
+    color: #f7ab01;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+h1 .view-all{display: block; font-size: 14px; color: #eea303; margin-top: 8px;}
+          
+          
+@media (max-width: 480px) {
+  .home-title{font-size: 22px;}
+  .package-box-info {background-color: #000; position: relative;}
+}
+           
+.movin{opacity: 0;transition:all 400ms ease-out;-webkit-transition:all 400ms ease-out;-webkit-transform:translate(0,15px);transform:translate(0,15px);transition-delay:0ms;-webkit-transition-delay:0ms;}
+.movin.movedin{opacity: 1;-webkit-transform:translate(0,0);transform:translate(0,0);}
+
+        
+
+/*
+    Hover over mask
+*/
+
+.mask {
+    position: absolute;
+    font-size: 30px;
+    width: 100%;
+    margin: 0px auto;
+    height: 100%;
+    top: 0px;
+    background: #000;
+    z-index: 10;
+    opacity: 0;
+}
+
+.wrapmask {
+    position: absolute;
+    font-size: 30px;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    margin: -30% 0px auto;
+    display: table-cell;
+    vertical-align: middle;
+    top: 20%;
+    text-align: center;
+    -webkit-transition: all ease-in 0.4s;
+    -moz-transition: all ease-in 0.4s;
+    -ms-transition: all ease-in 0.4s;
+    -o-transition: all ease-in 0.4s;
+}
+
+.wrapmask span {
+    display: block;
+    height: 100%;
+    margin-top: 30%;
+}
+
+.wrapmask:hover{ 
+    top: 30%; 
+}
+
+.maskicons {
+    font-size: 18px;
+    padding: 14px 15px;
+    background: #189B97;
+    margin-right: 0px;
+    color: #fff;
+    position: relative;
+    margin: 0 auto;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+span a {
+    text-decoration: none;
+}
+
+
+
+            
+
+
+
