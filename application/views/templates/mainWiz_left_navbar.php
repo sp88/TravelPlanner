@@ -16,7 +16,7 @@
                 <a href="<?php echo base_url('attractions');?>"><i class="fa fa-map-marker fa-lg"></i> <span class="nav-label">Add Attractions</span><span class="pull-right label label-primary"><span class="fa fa-lock fa-lg"></span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-cutlery fa-lg"></i> <span class="nav-label">Add Hotels</span><span class="pull-right label label-primary"><span class="fa fa-lock fa-lg"></span></a>
+                <a href="<?php echo base_url('hotels');?>"><i class="fa fa-cutlery fa-lg"></i> <span class="nav-label">Add Hotels</span><span class="pull-right label label-primary"><span class="fa fa-lock fa-lg"></span></a>
             </li>
             <li>
                 <a href="<?php echo base_url('map');?>"><i class="fa fa-globe fa-lg"></i> <span class="nav-label">Show On Map </span><span class="pull-right label label-primary"><span class="fa fa-lock fa-lg"></span></a>
