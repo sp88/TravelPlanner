@@ -10,9 +10,17 @@
 <!--Pagination styles-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/plugins/easyui/easyui.css') ?>"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/plugins/easyui/icon.css') ?>"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css') ?>"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/hotelStyles.css') ?>"/>
 
 <!--Login modal social button styles-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap-social.css') ?>"/>
+
+<script type="application/javascript" language="JavaScript">
+    function createHotelList(){
+
+    }
+</script>
 
 <body>
 
@@ -50,30 +58,30 @@
             <div class="sort-by-section clearfix">
                 <h4 class="sort-by-title block-sm">Sort results by:</h4>
                 <ul class="sort-bar clearfix block-sm">
-                    <li class="sort-by-name"><a class="sort-by-container" href="http://www.soaptheme.net/html/travelo/hotel-list-view.html#"><span>name</span></a></li>
-                    <li class="sort-by-price"><a class="sort-by-container" href="http://www.soaptheme.net/html/travelo/hotel-list-view.html#"><span>price</span></a></li>
+                    <li class="sort-by-name"><a class="sort-by-container" href="#"><span>name</span></a></li>
+                    <li class="sort-by-price"><a class="sort-by-container" href="#"><span>price</span></a></li>
                     <li class="clearer visible-sms"></li>
-                    <li class="sort-by-rating active"><a class="sort-by-container" href="http://www.soaptheme.net/html/travelo/hotel-list-view.html#"><span>rating</span></a></li>
-                    <li class="sort-by-popularity"><a class="sort-by-container" href="http://www.soaptheme.net/html/travelo/hotel-list-view.html#"><span>popularity</span></a></li>
+                    <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>rating</span></a></li>
+                    <li class="sort-by-popularity"><a class="sort-by-container" href="#"><span>popularity</span></a></li>
                 </ul>
 
-                <ul class="swap-tiles clearfix block-sm">
-                    <li class="swap-list active">
-                        <a href="./Travelo _ Responsive HTML5 Travel Template_files/Travelo _ Responsive HTML5 Travel Template.html"><i class="soap-icon-list"></i></a>
-                    </li>
-                    <li class="swap-grid">
-                        <a href="http://www.soaptheme.net/html/travelo/hotel-grid-view.html"><i class="soap-icon-grid"></i></a>
-                    </li>
-                    <li class="swap-block">
-                        <a href="http://www.soaptheme.net/html/travelo/hotel-block-view.html"><i class="soap-icon-block"></i></a>
-                    </li>
-                </ul>
+<!--                <ul class="swap-tiles clearfix block-sm">-->
+<!--                    <li class="swap-list active">-->
+<!--                        <a href="./Travelo _ Responsive HTML5 Travel Template_files/Travelo _ Responsive HTML5 Travel Template.html"><i class="soap-icon-list"></i></a>-->
+<!--                    </li>-->
+<!--                    <li class="swap-grid">-->
+<!--                        <a href="http://www.soaptheme.net/html/travelo/hotel-grid-view.html"><i class="soap-icon-grid"></i></a>-->
+<!--                    </li>-->
+<!--                    <li class="swap-block">-->
+<!--                        <a href="http://www.soaptheme.net/html/travelo/hotel-block-view.html"><i class="soap-icon-block"></i></a>-->
+<!--                    </li>-->
+<!--                </ul>-->
             </div>
 
             <div class="hotel-list listing-style3 hotel">
                 <article class="box">
                     <figure class="col-sm-5 col-md-4">
-                        <a title="" href="http://www.soaptheme.net/html/travelo/ajax/slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="./Travelo _ Responsive HTML5 Travel Template_files/1.png"></a>
+                        <a title="" href="#" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src=""></a>
                     </figure>
                     <div class="details col-sm-7 col-md-8">
                         <div>
@@ -82,8 +90,7 @@
                                 <div class="amenities">
                                     <i class="soap-icon-wifi circle"></i>
                                     <i class="soap-icon-fitnessfacility circle"></i>
-                                    <i class="soap-icon-fork circle"></i>
-                                    <i class="soap-icon-television circle"></i>
+                                    <i class="soap-icon-swimming circle"></i>
                                 </div>
                             </div>
                             <div>
@@ -102,6 +109,7 @@
                         </div>
                     </div>
                 </article>
+
             </div>
             
 <!--            <div class="row">-->
