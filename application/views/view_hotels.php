@@ -81,7 +81,7 @@
             <div class="hotel-list listing-style3 hotel">
                 <article class="box">
                     <figure class="col-sm-5 col-md-4">
-                        <a title="" href="#" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src=""></a>
+                        <a title="" href="#" class="hover-effect "><img width="270" height="160" alt="" src="http://www.soaptheme.net/html/travelo/images/hotels/1.png"></a> <!-- popup-gallery -->
                     </figure>
                     <div class="details col-sm-7 col-md-8">
                         <div>
@@ -95,7 +95,7 @@
                             </div>
                             <div>
                                 <div class="five-stars-container">
-                                    <span class="five-stars" style="width: 80%;"></span>
+                                    <span class="five-stars" style="width: 100%;"></span>
                                 </div>
                                 <span class="review">270 reviews</span>
                             </div>
@@ -104,7 +104,7 @@
                             <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
                             <div>
                                 <span class="price"><small>AVG/NIGHT</small>$620</span>
-                                <a class="button btn-small full-width text-center" title="" href="http://www.soaptheme.net/html/travelo/hotel-detailed.html">SELECT</a>
+                                <a class="button btn-small full-width text-center" title="" href="#">SELECT</a>
                             </div>
                         </div>
                     </div>
@@ -149,3 +149,13 @@
 
 
 </html>
+
+<?php
+class Hotel{
+    public $id;
+    public $name;
+    public $destination;
+    public $description;
+
+}
+?>

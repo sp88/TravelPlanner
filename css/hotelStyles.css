@@ -498,7 +498,7 @@ img.full-width {
 }
 
 .soap-icon-wifi:before {
-    content: url(./images/hotelImages/wi-fi-24.png);
+    content: url(./images/hotelIcons/wi-fi-24.png);
 }
 
 .soap-icon-binoculars:before {
@@ -526,7 +526,7 @@ img.full-width {
 }
 
 .soap-icon-fitnessfacility:before {
-    content: url(./images/hotelImages/gym.png);
+    content: url(./images/hotelIcons/gym.png);
 }
 
 .soap-icon-flexible:before {
@@ -782,7 +782,7 @@ img.full-width {
 }
 
 .soap-icon-departure:before {
-    content: url(./images/hotelImages/position_pin.png);
+    content: url(./images/hotelIcons/position_pin.png);
 }
 
 .soap-icon-letter:before {
@@ -1026,7 +1026,7 @@ img.full-width {
 }
 
 .soap-icon-swimming:before {
-    content: url(./images/hotelImages/swim_pool.png);
+    content: url(./images/hotelIcons/swim_pool.png);
 }
 
 .soap-icon-man-3:before {
@@ -2331,7 +2331,7 @@ blockquote.style2:before, blockquote.style2:after {
     -moz-opacity: 0;
     -khtml-opacity: 0;
     opacity: 0;
-    background-color: rgba(1, 183, 242, 0.6)
+    /*background-color: rgba(1, 183, 242, 0.6)*/
 }
 
 .hover-effect img {
@@ -2538,7 +2538,8 @@ blockquote.style2:before, blockquote.style2:after {
 }
 
 .five-stars-container .five-stars:before, .five-stars-container.editable-rating .ui-slider-range:before {
-    content: "\e006\e006\e006\e006\e006";
+    /*content: "\e006\e006\e006\e006\e006";*/
+    content: url(images/hotelIcons/star-16-grey.png)url(images/hotelIcons/star-16-grey.png)url(images/hotelIcons/star-16-grey.png)url(images/hotelIcons/star-16-grey.png)url(images/hotelIcons/star-16-grey.png);
     color: #fdb714
 }
 
@@ -2551,7 +2552,7 @@ blockquote.style2:before, blockquote.style2:after {
     position: absolute;
     top: 0;
     left: 1px;
-    content: "\e006\e006\e006\e006\e006";
+    /*content: "\e006\e006\e006\e006\e006";*/
     z-index: 0
 }
 
