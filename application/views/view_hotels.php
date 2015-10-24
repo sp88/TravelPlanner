@@ -16,10 +16,38 @@
 <!--Login modal social button styles-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap-social.css') ?>"/>
 
-<script type="application/javascript" language="JavaScript">
-    function createHotelList(){
+<!--<script type="application/javascript" language="JavaScript">-->
+<!--    function createHotelList(){-->
+<!---->
+<!--    }-->
+<!--</script>-->
 
+<script>
+function getSortedList(str) {
+//    document.getElementById("hotelListDiv").innerHTML = "";
+    if (str == "") {
+        document.getElementById("hotelListDiv").innerHTML = "";
+//        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("hotelListDiv").innerHTML = xmlhttp.responseText;
+            }
+            else {
+                document.getElementById("hotelListDiv").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","./application/controllers/hotelsController.php",true);
+        xmlhttp.send();
     }
+}
 </script>
 
 <body>
@@ -31,12 +59,11 @@
         <!--End of Left Navbar2-->
 
         <div id="page-wrapper" class="gray-bg" style="margin-top:45px;">
+
             <div class="row border-bottom">
-                
             <!--Top Navbar-->
                 <?php include_once('templates/mainWiz_top_navbar.php'); ?>
             <!--End of Top Navbar-->
-                
             </div>
             
             <div class="row  border-bottom white-bg dashboard-header">
@@ -58,11 +85,11 @@
             <div class="sort-by-section clearfix">
                 <h4 class="sort-by-title block-sm">Sort results by:</h4>
                 <ul class="sort-bar clearfix block-sm">
-                    <li class="sort-by-name"><a class="sort-by-container" href="#"><span>name</span></a></li>
+                    <li class="sort-by-name"><a onclick="getSortedList('destination')" class="sort-by-container" href="#"><span>destination</span></a></li>
                     <li class="sort-by-price"><a class="sort-by-container" href="#"><span>price</span></a></li>
                     <li class="clearer visible-sms"></li>
                     <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>rating</span></a></li>
-                    <li class="sort-by-popularity"><a class="sort-by-container" href="#"><span>popularity</span></a></li>
+<!--                    <li class="sort-by-popularity"><a class="sort-by-container" href="#"><span>popularity</span></a></li>-->
                 </ul>
 
 <!--                <ul class="swap-tiles clearfix block-sm">-->
@@ -78,37 +105,37 @@
 <!--                </ul>-->
             </div>
 
-            <div class="hotel-list listing-style3 hotel">
-                <article class="box">
-                    <figure class="col-sm-5 col-md-4">
-                        <a title="" href="#" class="hover-effect "><img width="270" height="160" alt="" src="http://www.soaptheme.net/html/travelo/images/hotels/1.png"></a> <!-- popup-gallery -->
-                    </figure>
-                    <div class="details col-sm-7 col-md-8">
-                        <div>
-                            <div>
-                                <h4 class="box-title">Hotel Hilton and Resorts<small><i class="soap-icon-departure yellow-color"></i> Bastille, Paris france</small></h4>
-                                <div class="amenities">
-                                    <i class="soap-icon-wifi circle"></i>
-                                    <i class="soap-icon-fitnessfacility circle"></i>
-                                    <i class="soap-icon-swimming circle"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="five-stars-container">
-                                    <span class="five-stars" style="width: 100%;"></span>
-                                </div>
-                                <span class="review">270 reviews</span>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>
-                            <div>
-                                <span class="price"><small>AVG/NIGHT</small>$620</span>
-                                <a class="button btn-small full-width text-center" title="" href="#">SELECT</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+            <div id="hotelListDiv" class="hotel-list listing-style3 hotel">
+<!--                <article class="box">-->
+<!--                    <figure class="col-sm-5 col-md-4">-->
+<!--                        <a title="" href="#" class="hover-effect "><img width="270" height="160" alt="" src="./css/images/hotelImages/hilton.jpg"></a> <!-- popup-gallery -->-->
+<!--                    </figure>-->
+<!--                    <div class="details col-sm-7 col-md-8">-->
+<!--                        <div>-->
+<!--                            <div>-->
+<!--                                <h4 class="box-title">Hotel Hilton and Resorts<small><i class="soap-icon-departure yellow-color"></i> Bastille, Paris france</small></h4>-->
+<!--                                <div class="amenities">-->
+<!--                                    <i class="soap-icon-wifi circle"></i>-->
+<!--                                    <i class="soap-icon-fitnessfacility circle"></i>-->
+<!--                                    <i class="soap-icon-swimming circle"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div class="five-stars-container">-->
+<!--                                    <span class="five-stars" style="width: 100%;"></span>-->
+<!--                                </div>-->
+<!--                                <span class="review">270 reviews</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id, consectetur adipi deese cing elit maus fringilla bibe endum.</p>-->
+<!--                            <div>-->
+<!--                                <span class="price"><small>AVG/NIGHT</small>$620</span>-->
+<!--                                <a class="button btn-small full-width text-center" title="" href="#">SELECT</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </article>-->
 
             </div>
             
@@ -151,11 +178,5 @@
 </html>
 
 <?php
-class Hotel{
-    public $id;
-    public $name;
-    public $destination;
-    public $description;
 
-}
 ?>
